@@ -5,22 +5,18 @@
  */
 package listaswitchcase;
 
+import java.util.Scanner;
+
 /**
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class ListaSwitchCase {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Ex4 {
+    
     public static void main(String[] args) {
         
-        int n1, n2;
+        Scanner ler = new Scanner(System.in);
         
-        n1 = 268/100;
-         System.out.println(n1);
-        // TODO code application logic here
+        
     }
-    
 }
