@@ -30,7 +30,7 @@ public class Ex4 {
         System.out.print("Ano: ");
         ano = ler.nextInt();
 
-        //Processos
+        //Processos e Saídas
         boolean bissexto = (ano % 4 == 0) || (ano % 400 == 0);//Consideração básica para saber se é bissexto
 
         switch (mes) {
