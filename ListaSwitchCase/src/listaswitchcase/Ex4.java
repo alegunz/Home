@@ -31,7 +31,7 @@ public class Ex4 {
         ano = ler.nextInt();
 
         //Processos
-        //boolean bissexto = (ano % 4 == 0) || (ano % 400 == 0);//Consideração básica para saber se é bissexto
+        boolean bissexto = (ano % 4 == 0) || (ano % 400 == 0);//Consideração básica para saber se é bissexto
 
         switch (mes) {
             case 1:
@@ -41,11 +41,11 @@ public class Ex4 {
                 break;
             case 2:
                 nomeMes = "Fevereiro";
-                //if (bissexto) {
+                if (bissexto) {
                     dias = 29;
-                //} else {
-                //    dias = 28;
-                //}
+                } else {
+                    dias = 28;
+                }
                 System.out.printf("\nO %s, %d tem %d dias.\n", nomeMes, ano, dias);
                 break;
             case 3:
