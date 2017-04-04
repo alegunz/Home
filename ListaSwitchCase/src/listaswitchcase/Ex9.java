@@ -57,8 +57,9 @@ public class Ex9 {
         soma1 = (dig1 * 10) + (dig2 * 9) + (dig3 * 8) + (dig4 * 7) + (dig5 * 6) + (dig6 * 5) + (dig7 * 4) + (dig8 * 3) + (dig9 * 2);
         resto1 = 11 - (soma1 % 11);
 
-////Primeira Condição
+//Primeira Condição
         if (resto1 < 10 && resto1 == dig10) {
+//Segunda Condição             
             soma2 = (dig1 * 11) + (dig2 * 10) + (dig3 * 9) + (dig4 * 8) + (dig5 * 7) + (dig6 * 6) + (dig7 * 5) + (dig8 * 4) + (dig9 * 3) + (dig10 * 2);
             resto2 = 11 - (soma2 % 11);
             if (resto2 < 10 && resto2 == dig11) {
@@ -66,6 +67,7 @@ public class Ex9 {
             } else if (resto2 == 0) {
                 System.out.println("C.P.F Válido!!!");
             } else if (resto1 == 0) {
+//Segunda Condição               
                 soma2 = (dig1 * 11) + (dig2 * 10) + (dig3 * 9) + (dig4 * 8) + (dig5 * 7) + (dig6 * 6) + (dig7 * 5) + (dig8 * 4) + (dig9 * 3) + (dig10 * 2);
                 resto2 = 11 - (soma2 % 11);
                 if (resto2 < 10 && resto2 == dig11) {
