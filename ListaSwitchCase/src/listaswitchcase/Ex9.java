@@ -21,7 +21,7 @@ public class Ex9 {
         int soma1, resto1, sub1, soma2, resto2, sub2, cpfinte, part1n, part2n, part3n, fimn,
                 dig1, dig2, dig3, dig4, dig5, dig6, dig7, dig8, dig9, dig10, dig11;
 
-        String cpftext, test, part1, part2, part3, fim;
+        String cpftext, test, part1, part2, part3, fim, proces = "";
 
 //Entrada
         System.out.print("C.P.F: ");
@@ -63,21 +63,34 @@ public class Ex9 {
             soma2 = (dig1 * 11) + (dig2 * 10) + (dig3 * 9) + (dig4 * 8) + (dig5 * 7) + (dig6 * 6) + (dig7 * 5) + (dig8 * 4) + (dig9 * 3) + (dig10 * 2);
             resto2 = 11 - (soma2 % 11);
             if (resto2 < 10 && resto2 == dig11) {
-                System.out.println("C.P.F Válido!!!");
+                proces = "ok";
             } else if (resto2 == 0) {
-                System.out.println("C.P.F Válido!!!");
+                proces = "ok";
             } else if (resto1 == 0) {
 //Segunda Condição               
                 soma2 = (dig1 * 11) + (dig2 * 10) + (dig3 * 9) + (dig4 * 8) + (dig5 * 7) + (dig6 * 6) + (dig7 * 5) + (dig8 * 4) + (dig9 * 3) + (dig10 * 2);
                 resto2 = 11 - (soma2 % 11);
                 if (resto2 < 10 && resto2 == dig11) {
-                    System.out.println("C.P.F Válido!!!");
+                    proces = "ok";
                 } else if (resto2 == 0) {
-                    System.out.println("C.P.F Válido!!!");
+                    proces = "ok";
                 }
             }
         } else {
-            System.out.println("C.P.F Inválido...");
+            proces = "nope";
         }
+        
+//Saídas com switch, de acordo com o proces         
+        switch (proces) {
+            case "ok":
+                System.out.println("C.P.F Válido!!!");
+                break;
+            case "nope":
+                System.out.println("C.P.F Inválido!!!");
+                break;
+            default:
+                break;
+        }
+// Acredito que não seja esse o uso correto do Switch nesse algoritmo, pois não foi nada muito impactante no processo principal da validação do CPF. Mas foi o que eu consegui.        
     }
 }
