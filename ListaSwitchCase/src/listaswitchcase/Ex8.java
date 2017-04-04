@@ -33,47 +33,47 @@ public class Ex8 {
                 System.out.printf("\nValor normal: R$%.2f\n", tarifa);
                 break;
             case 2:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 3:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 4:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 5:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 6:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 7:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 8:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 9:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 10:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 11:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             case 12:
-                tarifa = tarifa * Math.pow((1 + 0.05), mes -1);
+                tarifa = tarifa * Math.pow((1 + 0.05), (mes -1));
                 System.out.printf("A anuidade é de R$%.2f\nCom a multa é: R$%.2f\n", ano, tarifa);
                 break;
             default:
