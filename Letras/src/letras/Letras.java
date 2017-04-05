@@ -60,6 +60,7 @@ public class Letras {
                 break;
             default:
                 System.out.println("Inválido.");
+                break;
         }
         if (vogOUcons) {
             System.out.println("Vogal.");
