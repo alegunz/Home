@@ -9,21 +9,21 @@ package listalaçorepetiçao;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex1 {
+public class Ex07 {
 
     public static void main(String[] args) {
-
-        //Variáveis e entrada
-        int num = 0;
         
+        //Variáveis
+        int multisete = 7, contagi = 1;
         
         //Processamento
-        while (num < 50) {
-            num++;
-            //Saída
-            System.out.println(num);
+        while (multisete <= 200) {
+            
+        //Saída
+            System.out.println(multisete);
+            contagi++;
+            multisete = 7 * contagi;
         }
-
     }
 
 }

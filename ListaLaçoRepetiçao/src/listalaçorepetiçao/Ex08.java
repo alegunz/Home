@@ -9,7 +9,7 @@ package listalaçorepetiçao;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex8 {
+public class Ex08 {
 
     public static void main(String[] args) {
 

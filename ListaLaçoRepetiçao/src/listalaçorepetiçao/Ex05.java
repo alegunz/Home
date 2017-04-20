@@ -9,19 +9,21 @@ package listalaçorepetiçao;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex4 {
+public class Ex05 {
 
     public static void main(String[] args) {
 
-        //Entrada?
-        int num = 0;
+        //Variáveis
+        int num = 100;
 
         //Processo
         for (int i = 0; i < 100; i++) {
-            num = num + 10;
+            if (num % 2 == 0) {
+                //Saída
+                System.out.println(num);
+            }
+            num--;
         }
-        //Saída
-        System.out.println(num);
     }
 
 }

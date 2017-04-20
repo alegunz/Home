@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex6 {
+public class Ex06 {
     
     public static void main(String[] args) {
         

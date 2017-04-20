@@ -11,26 +11,27 @@ import java.util.Scanner;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex2 {
-    
+public class Ex03 {
+
     public static void main(String[] args) {
-        
+
         Scanner ler = new Scanner(System.in);
-        
+
         //Variáveis
-        int soma = 0, clienteNum, base = 0;
-        
+        int num, maior = 0;
+
         //Entrada
-        System.out.print("Digite um número: ");
-        clienteNum = ler.nextInt();
-        
-        //Processamento
-        while(base <= clienteNum) {
-            soma = soma + base;
-            base++;            
+        System.out.print("Digite 10 números: ");
+
+        //Processo
+        for (int i = 0; i < 10; i++) {
+            num = ler.nextInt();
+            if (num > maior) {
+                maior = num;
+            }
         }
         //Saída
-        System.out.println(soma);
+        System.out.println(maior);
     }
-    
+
 }

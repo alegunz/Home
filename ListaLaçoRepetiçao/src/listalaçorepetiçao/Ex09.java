@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex9 {
+public class Ex09 {
 
     public static void main(String[] args) {
 
