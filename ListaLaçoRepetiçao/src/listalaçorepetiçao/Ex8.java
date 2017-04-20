@@ -14,7 +14,7 @@ public class Ex8 {
     public static void main(String[] args) {
 
         //Variáveis
-        int soma = 0, denominador = 0, fim = 0;
+        int soma = 0, denominador = 0, fim;
         
         //Processo
         for (int i = 13; i < 73; i++) {
