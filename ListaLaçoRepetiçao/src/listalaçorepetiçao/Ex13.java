@@ -22,10 +22,13 @@ public class Ex13 {
         int num = ler.nextInt();
 
         //Processo
+        
+          //Variáveis
+        int resultado = 0;
+        
+        for (int i = 0; i < num; i++) {
         int numerador = 1;
         int denominador = 1;
-        int resultado = 0;
-        for (int i = 0; i < num; i++) {
             numerador *= (i + 1);
             denominador *= (2 * (i + 1)) - 1;
             resultado += (numerador / denominador);
