@@ -19,13 +19,13 @@ public class Ex12 {
 
         //Entrada
         System.out.print("(1 / N) + (2 / (N - 1)) + (3 / (N - 2)) + ... + ((N - 1) / 2) + (N / 1) \nDigite N: ");
-        int num = ler.nextInt();//--3--
+        int num = ler.nextInt();
 
         //Processo
-        int soma = 0;
-        for (int i = 0; i < num; i++) {
-            int numerador = (i + 1);
-            int denominador = (num - i);
+        double soma = 0;
+        for (double i = 0; i < num; i++) {
+            double numerador = (i + 1);
+            double denominador = (num - i);
             
             soma += (numerador / denominador);
         }

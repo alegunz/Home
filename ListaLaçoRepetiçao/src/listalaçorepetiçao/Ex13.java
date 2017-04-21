@@ -24,11 +24,11 @@ public class Ex13 {
         //Processo
         
           //Variáveis
-        int resultado = 0;
+        double resultado = 0;
         
-        for (int i = 0; i < num; i++) {
-        int numerador = 1;
-        int denominador = 1;
+        for (double i = 0; i < num; i++) {
+        double numerador = 1;
+        double denominador = 1;
             numerador *= (i + 1);
             denominador *= (2 * (i + 1)) - 1;
             resultado += (numerador / denominador);

@@ -22,8 +22,8 @@ public class Ex11 {
         int num = ler.nextInt();
 
         //Processo
-        int resultado = 1;
-        for (int i = 1; i < num; i++) {
+        double resultado = 1;
+        for (double i = 1; i < num; i++) {
             if (i % 2 == 0) {
                 resultado = resultado + (1 / (i + 1));
             } else {
