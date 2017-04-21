@@ -24,10 +24,10 @@ public class Ex12 {
         //Processo
         int soma = 0;
         for (int i = 0; i < num; i++) {
-            int numerador = num - (num - (i + 1));
+            int numerador = (i + 1);
             int denominador = (num - i);
             
-            soma = soma + (numerador / denominador);
+            soma += (numerador / denominador);
         }
         
         //Saída
