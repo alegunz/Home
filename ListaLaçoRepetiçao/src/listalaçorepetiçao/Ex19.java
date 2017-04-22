@@ -21,7 +21,7 @@ public class Ex19 {
         System.out.print("Senha: ");
         String senha = ler.next();
 
-        //Processo
+        //Processo e Saídas
         boolean valido = senha.equalsIgnoreCase("2002");
         if (valido) {
             System.out.println("Acesso Permitido");
