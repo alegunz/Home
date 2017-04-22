@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author andré.yamamoto <aayandre94@gmail.com>
  */
-public class Ex17 {
+public class Ex18 {
 
     public static void main(String[] args) {
 
@@ -22,12 +22,19 @@ public class Ex17 {
         int num = ler.nextInt();
 
         //Processo
-        for (int i = 1; i <= num; i++) {
-            boolean divisao = (num % i == 0);
-            if (divisao) {
-        //Saída
-                System.out.print(i+" ");
+        int n1 = 0, n2 = 1;
+        int resultado = (n1 + n2);
+
+        if (num < 46) {
+            for (int i = 0; i < num; i++) {
+                System.out.print(n1+" ");//Saída
+                n1 = n2;
+                n2 = resultado;
+                resultado = n1 + n2;
             }
+            System.out.print("...\n");
+        } else {
+            System.out.println("Número maior que 46.");
         }
     }
 
