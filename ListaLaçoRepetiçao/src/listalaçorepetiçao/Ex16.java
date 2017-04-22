@@ -26,8 +26,8 @@ public class Ex16 {
         //Processo        
         do {
             int num = ler.nextInt();
-            String parchek = null;
-            String positivochek = null;
+            String parchek;
+            String positivochek;
 
             boolean par = (num % 2 == 0);//testando os boolean, pra aprender
             if (par) {
