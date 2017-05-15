@@ -51,7 +51,8 @@ public class Conecta4 {
                 matriz[i][j] = " ";
             }
         }
-        int certo = 0;
+
+        int certo = 0, linha = 0, colunaAtual = 0;
 
         boolean vez = jogador.equalsIgnoreCase("x");//Checagem da vez de quem joga---------           
 
@@ -77,31 +78,73 @@ public class Conecta4 {
             //Checar se a  posição está preenchida
             for (int i = 0; i < 6; i++) {
                 if (("x".equalsIgnoreCase(matriz[i][(coluna - 1)])) || ("o".equalsIgnoreCase(matriz[i][(coluna - 1)]))) {
-                    if(i == 5) {//Se a coluna estiver cheia o jogador escolhe outra coluna.
+                    if (i == 5) {//Se a coluna estiver cheia o jogador escolhe outra coluna.
                         System.out.println("Coluna cheia.\nEscolha outra.");
                         vez = !vez;
                         break;
                     }
                 } else {
                     matriz[i][coluna - 1] = jogador;
-                    break;                    
+                    linha = i;//Pega em que linha a jogada ocorreu
+                    colunaAtual = (coluna - 1);
+                    break;
                 }
             }
-            
+
+            //Tabuleiro com as jogadas executadas
             Tabuleiro(matriz);
-            
-            for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < 6; j++) {
-                    for (int k = 0; k < 10; k++) {
-                        for (int l = 0; l < 10; l++) {
-                            String vitoria[] = new String[3];
-                            
-                        }
+
+            //Vitória na raça
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 5; j++) {
+                    if ( //Checar na horizontal
+                            matriz[i][j].equalsIgnoreCase(jogador)
+                            && matriz[i][(j + 1)].equalsIgnoreCase(jogador)
+                            && matriz[i][(j + 2)].equalsIgnoreCase(jogador)
+                            && matriz[i][(j + 3)].equalsIgnoreCase(jogador)
+                            ||//Checar na vertical  
+                            matriz[j][i].equalsIgnoreCase(jogador)
+                            && matriz[(j + 1)][i].equalsIgnoreCase(jogador)
+                            && matriz[(j + 2)][i].equalsIgnoreCase(jogador)
+                            && matriz[(j + 3)][i].equalsIgnoreCase(jogador)) {
+                        System.out.printf("Vitória do jogador %s!!!\n", jogador);
+                        certo = 1;
+                        break;
                     }
-                }                
+
+                }
+
+            }
+            //EM ANDAMENTO------------------------------------------
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if ( //Checar na diagonal - Sequência: "/"
+                            matriz[i][j].equalsIgnoreCase(jogador)
+                            && matriz[(i + 1)][j + 1].equalsIgnoreCase(jogador)
+                            && matriz[(i + 2)][j + 2].equalsIgnoreCase(jogador)
+                            && matriz[(i + 3)][j + 3].equalsIgnoreCase(jogador)) {
+                        System.out.printf("Vitória do jogador %s!!!\n", jogador);
+                        certo = 1;
+                        break;
+                    }
+                }
+            }
+            for (int i = 5; i > 2; i--) {
+                for (int j = 6; j > 2; j--) {
+                    if ( //Checar na diagonal - Sequência: "\"
+                            matriz[i][j + 6].equalsIgnoreCase(jogador)
+                            && matriz[(i + 1)][j + 5].equalsIgnoreCase(jogador)
+                            && matriz[(i + 2)][j + 1].equalsIgnoreCase(jogador)
+                            && matriz[(i + 3)][j].equalsIgnoreCase(jogador)) {
+
+                    }
+                }
+
             }
 
-            vez = !vez;//Altera jogador
+            //Checa vitória de totas as linhas, apenas na horizontal
+            //Altera jogador
+            vez = !vez;
         } while (certo == 0);//Checar VITÓRIA
     }
 
