@@ -99,7 +99,7 @@ public class Conecta4 {
 
             //Saída se ganhador
             if (certo == 1) {
-                System.out.printf("Vitória do jogador %s!!!", jogador);
+                System.out.printf("\nVitória do jogador %s!!!\n", jogador);
             }
 
             //Altera jogador
@@ -139,7 +139,7 @@ public class Conecta4 {
             }
         }
         for (int i = 0; i < 2; i++) {
-            for (int j = 6; j > 3; j--) {
+            for (int j = 6; j >= 3; j--) {
                 if ( //Checar na diagonal - Sequência: "\"
                         matriz[i][j].equalsIgnoreCase(jogador)
                         && matriz[(i + 1)][j - 1].equalsIgnoreCase(jogador)
