@@ -94,58 +94,63 @@ public class Conecta4 {
             //Tabuleiro com as jogadas executadas
             Tabuleiro(matriz);
 
-            //Vitória na raça
-            for (int i = 0; i < 6; i++) {
-                for (int j = 0; j < 5; j++) {
-                    if ( //Checar na horizontal
-                            matriz[i][j].equalsIgnoreCase(jogador)
-                            && matriz[i][(j + 1)].equalsIgnoreCase(jogador)
-                            && matriz[i][(j + 2)].equalsIgnoreCase(jogador)
-                            && matriz[i][(j + 3)].equalsIgnoreCase(jogador)
-                            ||//Checar na vertical  
-                            matriz[j][i].equalsIgnoreCase(jogador)
-                            && matriz[(j + 1)][i].equalsIgnoreCase(jogador)
-                            && matriz[(j + 2)][i].equalsIgnoreCase(jogador)
-                            && matriz[(j + 3)][i].equalsIgnoreCase(jogador)) {
-                        System.out.printf("Vitória do jogador %s!!!\n", jogador);
-                        certo = 1;
-                        break;
-                    }
+            //Vitória
+            certo = VitoriaVerticalHorizontalDiagonal(matriz, jogador, certo);
 
-                }
-
-            }
-            //EM ANDAMENTO------------------------------------------
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if ( //Checar na diagonal - Sequência: "/"
-                            matriz[i][j].equalsIgnoreCase(jogador)
-                            && matriz[(i + 1)][j + 1].equalsIgnoreCase(jogador)
-                            && matriz[(i + 2)][j + 2].equalsIgnoreCase(jogador)
-                            && matriz[(i + 3)][j + 3].equalsIgnoreCase(jogador)) {
-                        System.out.printf("Vitória do jogador %s!!!\n", jogador);
-                        certo = 1;
-                        break;
-                    }
-                }
-            }
-            for (int i = 5; i > 2; i--) {
-                for (int j = 6; j > 2; j--) {
-                    if ( //Checar na diagonal - Sequência: "\"
-                            matriz[i][j + 6].equalsIgnoreCase(jogador)
-                            && matriz[(i + 1)][j + 5].equalsIgnoreCase(jogador)
-                            && matriz[(i + 2)][j + 1].equalsIgnoreCase(jogador)
-                            && matriz[(i + 3)][j].equalsIgnoreCase(jogador)) {
-
-                    }
-                }
-
+            //Saída se ganhador
+            if (certo == 1) {
+                System.out.printf("Vitória do jogador %s!!!", jogador);
             }
 
-            //Checa vitória de totas as linhas, apenas na horizontal
             //Altera jogador
             vez = !vez;
-        } while (certo == 0);//Checar VITÓRIA
+        } while (certo == 0);//Checar VITÓRIA        
+    }
+
+    public static int VitoriaVerticalHorizontalDiagonal(String[][] matriz, String jogador, int certo) {
+        //Vitória horizontal, vertical, diagonais
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                if ( //Checar na horizontal
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 1)].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 2)].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 3)].equalsIgnoreCase(jogador)
+                        ||//Checar na vertical
+                        matriz[j][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 1)][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 2)][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 3)][i].equalsIgnoreCase(jogador)) {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                if ( //Checar na diagonal - Sequência: "/"
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[(i + 1)][j + 1].equalsIgnoreCase(jogador)
+                        && matriz[(i + 2)][j + 2].equalsIgnoreCase(jogador)
+                        && matriz[(i + 3)][j + 3].equalsIgnoreCase(jogador)) {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < 2; i++) {
+            for (int j = 6; j > 3; j--) {
+                if ( //Checar na diagonal - Sequência: "\"
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[(i + 1)][j - 1].equalsIgnoreCase(jogador)
+                        && matriz[(i + 2)][j - 2].equalsIgnoreCase(jogador)
+                        && matriz[(i + 3)][j - 3].equalsIgnoreCase(jogador)) {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        return certo;
     }
 
     public static void Tabuleiro(String[][] matriz) {
