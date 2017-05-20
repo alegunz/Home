@@ -19,33 +19,15 @@ public class Ex02 {
 
         System.out.print("Digite um número: ");
         int num = ler.nextInt();
-        
+
         //Validação
-        num = validandoNum(num, ler);
-        
-        //Processo        
-        num = somatoria(num);
-        
+        num = MinhasFunc.numeroPositivoValidacao(num, ler);
+
+        //Processo
+        num = MinhasFunc.somatoria(num);
+
         //Saída
         System.out.println(num);
     }
 
-    public static int validandoNum(int num, Scanner ler) {
-        //Validando o num
-        while (num < 0) {
-            System.out.print("Digite um número maior que 0: ");
-            num = ler.nextInt();
-        }
-        return num;
-    }
-
-    public static int somatoria(int N) {
-        
-        int soma = 0;
-        for (int i = 1; i <= N; i++) {
-            soma += i;
-        }
-        N = soma;
-        return N;
-    }
 }
