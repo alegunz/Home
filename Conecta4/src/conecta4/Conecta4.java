@@ -85,8 +85,6 @@ public class Conecta4 {
                     }
                 } else {
                     matriz[i][coluna - 1] = jogador;
-                    linha = i;//Pega em que linha a jogada ocorreu
-                    colunaAtual = (coluna - 1);
                     break;
                 }
             }
@@ -100,6 +98,8 @@ public class Conecta4 {
             //Saída se ganhador
             if (certo == 1) {
                 System.out.printf("\nVitória do jogador %s!!!\n", jogador);
+            } else if (certo == 2) {
+                System.out.println("\nEmpate.");
             }
 
             //Altera jogador
@@ -149,6 +149,18 @@ public class Conecta4 {
                     break;
                 }
             }
+        }
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                if("x".equalsIgnoreCase(matriz[i][j]) || "o".equalsIgnoreCase(matriz[i][j])) {
+                    int contagem = 0;
+                    contagem++;
+                    if (contagem == 42) {
+                        certo = 2;
+                    }
+                }
+            }
+            
         }
         return certo;
     }
