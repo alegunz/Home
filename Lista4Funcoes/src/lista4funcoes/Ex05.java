@@ -14,19 +14,19 @@ public class Ex05 {
     public static void main(String[] args) {
         
         System.out.println("---Bháskara---");
-        System.out.println("ax² +/- bx +/- c");
-        System.out.println("a");
+        System.out.println("ax² + bx + c");
+        System.out.println("Valor de a:");
         double a = MinhasFunc.entradaInt();
         
-        System.out.println("b");
+        System.out.println("Valor de b:");
         double b = MinhasFunc.entradaInt();
         
-        System.out.println("c");
+        System.out.println("Valor de c:");
         double c = MinhasFunc.entradaInt();
         
         double resultado = MinhasFunc.bhaskara(a, b, c);
         
-        System.out.printf(" a: %.1fx²\n b: %.1fx\n c: %.1f\nA maior raiz é: %.2f\n", a, b, c, resultado);
+        System.out.printf("----Resultado----\na = %.1fx² b = %.1fx c = %.1f\nA maior raiz é: %.2f\n", a, b, c, resultado);
     }
     
 }
