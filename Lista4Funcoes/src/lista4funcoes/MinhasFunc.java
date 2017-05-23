@@ -133,4 +133,70 @@ public class MinhasFunc {
         return ehprimo;
 
     }
+
+    public static int idadeEmDias(int anoAtual, int anos, int meses, int dias) {
+
+        for (int i = 0; i < anos; i++) {
+            int anoValidacao = anoAtual - i;
+            if (bissexto(anoValidacao)) {
+                dias += 366;
+            } else {
+                dias += 365;
+            }
+        }
+
+        dias += meses * 31;
+
+        //Complexidade não foi o caminho, mas daria pra usar
+//        for (int i = 0; i < meses; i++) {
+//            int mesValidacao = meses - i;
+//            switch (mesValidacao) {
+//                case 1:
+//                case 3:
+//                case 5:
+//                case 7:
+//                case 8:
+//                case 10:
+//                case 12:
+//                    dias += 31;
+//                    break;
+//                case 4: case 6: case 9: case 11:
+//                    dias += 30;
+//                    break;
+//                case 2:
+//                    if (bissexto(anoAtual)) {
+//                        dias += 29;
+//                        break;
+//                    } else {
+//                        dias += 28;
+//                        break;
+//                    }
+//            }
+//        }
+        return dias;
+
+    }
+
+    public static boolean bissexto(int ano) {
+        boolean isBissexto = ((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0)));
+        return isBissexto;
+    }
+
+    public static String categoriaNadador(int idade) {
+
+        if (idade >= 5 && idade <= 7) {
+            return "Infantil A";
+        } else if (idade >= 8 && idade <= 10) {
+            return "Infantil B";
+        } else if (idade >= 11 && idade <= 13) {
+            return "Juvenil A";
+        } else if (idade >= 14 && idade <= 17) {
+            return "Juvenil B";
+        } else if (idade >= 18) {
+            return "Adulto";
+        } else {
+            return "Abaixo de 5 anos.";
+        }
+    }
+
 }
