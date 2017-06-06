@@ -1,0 +1,197 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package conecta4;
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author ALEXANDRE
+ */
+public class Conecta4_MiniGame {
+
+    static Scanner console = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("---Conecta 4---");
+
+        System.out.printf("    1   2   3   4   5   6   7   (COLUNAS)"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n6 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n5 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n4 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n3 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n2 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -"
+                + "\n1 |   |   |   |   |   |   |   |"
+                + "\n  - - - - - - - - - - - - - - -\n");
+        
+        /*---------------------------ENTRADA ----------------------------------------------------
+        Aqui Usuário escolher qual jogador deseja ser, para dar inicio o processamento.
+        */
+
+        System.out.println("Qual jogador deseja ser? (X) ou (O) :");
+        String jogador = console.next();
+        String maquina;
+             
+        if (jogador.equalsIgnoreCase("x")){
+            System.out.print("Seu openente será a Máquina (O), Prepare-se para Perder ! \n\n\n\n");
+            jogador = "X";
+            maquina = "O";
+             }else{
+                 System.out.println("Seu openente será a Máquina (X), Prepare-se para Perder ! \n\n\n\n");
+                 jogador = "O";
+                 maquina = "X";
+             }
+                
+             //--------------------- FIM ENTRADA ---------------------------------
+             String matrizJogo [][] = new String [6][7];
+        for(int i = 0; i < matrizJogo.length; i++){
+            for (int j = 0; j < matrizJogo[i].length; j++){
+                matrizJogo [i][j] = " ";
+        }
+    }
+             
+             boolean Player = jogador.equalsIgnoreCase("X"); //Mostra a Vez do jogador
+            
+             
+                 while(Player){
+                     System.out.println("\n\n Sua Vez de jogar !");
+                     System.out.println("");
+                     System.out.println("Escolha uma coluna: ");
+                     int coluna = console.nextInt();
+                    int colunaMaq = JogadorIntel();
+                    
+                    // coluna é válida
+                    while(coluna < 1 || coluna > 7){
+                        System.out.println("Escolha Coluna entra 1 e 7 :");
+                        coluna = console.nextInt();
+                        
+                    }
+                    for (int i = 0; i < 6; i++) {
+                if (("X".equalsIgnoreCase(matrizJogo[i][(coluna - 1)])) && ("X".equalsIgnoreCase(matrizJogo[i][(coluna - 1)])) || ("O".equalsIgnoreCase(matrizJogo[i][(colunaMaq)])) || ("O".equalsIgnoreCase(matrizJogo[i][(colunaMaq)]))) {
+                    if (i == 5) {//Se a coluna estiver cheia o jogador escolhe outra coluna.
+                        System.out.println("Coluna cheia.\nEscolha outra.");
+                        Player = !Player;
+                        break;
+                    }
+                } else {
+                    matrizJogo[i][colunaMaq] = maquina;
+                    matrizJogo[i][coluna - 1] = jogador;
+                    break;
+                }
+            }
+                    Tabuleiro(matrizJogo);
+                 }
+                
+    }
+
+  
+
+    public static int JogadorIntel() {
+        Random Maquina = new Random();
+
+        int JogadorMaquina = Maquina.nextInt(7);
+
+        return JogadorMaquina;
+    }
+    
+   
+    
+    public static void Tabuleiro(String[][] MatrizConecta) {
+        
+        System.out.printf("    1   2   3   4   5   6   7   (COLUNAS)");
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n6 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[5][0], MatrizConecta[5][1], MatrizConecta[5][2], MatrizConecta[5][3], MatrizConecta[5][4], MatrizConecta[5][5], MatrizConecta[5][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n5 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[4][0], MatrizConecta[4][1], MatrizConecta[4][2], MatrizConecta[4][3], MatrizConecta[4][4], MatrizConecta[4][5], MatrizConecta[4][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n4 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[3][0], MatrizConecta[3][1], MatrizConecta[3][2], MatrizConecta[3][3], MatrizConecta[3][4], MatrizConecta[3][5], MatrizConecta[3][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n3 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[2][0], MatrizConecta[2][1], MatrizConecta[2][2], MatrizConecta[2][3], MatrizConecta[2][4], MatrizConecta[2][5], MatrizConecta[2][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n2 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[1][0], MatrizConecta[1][1], MatrizConecta[1][2], MatrizConecta[1][3], MatrizConecta[1][4], MatrizConecta[1][5], MatrizConecta[1][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -");
+        System.out.printf("\n1 | %s | %s | %s | %s | %s | %s | %s |", MatrizConecta[0][0], MatrizConecta[0][1], MatrizConecta[0][2], MatrizConecta[0][3], MatrizConecta[0][4], MatrizConecta[0][5], MatrizConecta[0][6]);
+        System.out.printf("\n  - - - - - - - - - - - - - - -\n");
+}
+    
+    
+    
+     public static int VitoriaVerticalHorizontalDiagonal(String[][] matriz, String jogador,String Maquina, int certo) {
+        //Vitória horizontal, vertical, diagonais
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                if ( //Checar na horizontal
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 1)].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 2)].equalsIgnoreCase(jogador)
+                        && matriz[i][(j + 3)].equalsIgnoreCase(jogador)
+                        ||//Checar na vertical
+                        matriz[j][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 1)][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 2)][i].equalsIgnoreCase(jogador)
+                        && matriz[(j + 3)][i].equalsIgnoreCase(jogador)) 
+                if ( //Checar na horizontal maquina
+                        matriz[i][j].equalsIgnoreCase(Maquina)
+                        && matriz[i][(j + 1)].equalsIgnoreCase(Maquina)
+                        && matriz[i][(j + 2)].equalsIgnoreCase(Maquina)
+                        && matriz[i][(j + 3)].equalsIgnoreCase(Maquina)
+                        ||//Checar na vertical maquina
+                        matriz[j][i].equalsIgnoreCase(Maquina)
+                        && matriz[(j + 1)][i].equalsIgnoreCase(Maquina)
+                        && matriz[(j + 2)][i].equalsIgnoreCase(Maquina)
+                        && matriz[(j + 3)][i].equalsIgnoreCase(Maquina))
+                {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                if ( //Checar na diagonal - Sequência: "/"
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[(i + 1)][j + 1].equalsIgnoreCase(jogador)
+                        && matriz[(i + 2)][j + 2].equalsIgnoreCase(jogador)
+                        && matriz[(i + 3)][j + 3].equalsIgnoreCase(jogador)) {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < 2; i++) {
+            for (int j = 6; j >= 3; j--) {
+                if ( //Checar na diagonal - Sequência: "\"
+                        matriz[i][j].equalsIgnoreCase(jogador)
+                        && matriz[(i + 1)][j - 1].equalsIgnoreCase(jogador)
+                        && matriz[(i + 2)][j - 2].equalsIgnoreCase(jogador)
+                        && matriz[(i + 3)][j - 3].equalsIgnoreCase(jogador)) {
+                    certo = 1;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                if("x".equalsIgnoreCase(matriz[i][j]) || "o".equalsIgnoreCase(matriz[i][j])) {
+                    int contagem = 0;
+                    contagem++;
+                    if (contagem == 42) {
+                        certo = 2;
+                    }
+                }
+            }
+            
+        }
+        return certo;
+    }
+}
